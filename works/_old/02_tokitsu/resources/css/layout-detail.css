@@ -1,0 +1,222 @@
+@charset "UTF-8";
+.picture-slider {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+.picture-slider .slide-item .image {
+  display: block;
+}
+.picture-slider .slide-arrow {
+  cursor: pointer;
+  position: absolute;
+  width: 3rem;
+  top: 45%;
+  z-index: 1;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0s;
+  transition: opacity 0.3s 0s;
+}
+.picture-slider .slide-arrow.-prev {
+  left: 1rem;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.picture-slider .slide-arrow.-next {
+  right: 1rem;
+}
+.picture-slider .slide-arrow[aria-disabled=true] {
+  opacity: 0;
+}
+.picture-slider .slick-dots {
+  bottom: -5rem;
+}
+.picture-slider .slick-dots li {
+  margin: 0 0.6rem;
+}
+.picture-slider .slick-dots li button {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 100px;
+}
+.picture-slider .slick-dots li button:before {
+  content: none;
+}
+.picture-slider .slick-dots li.slick-active button {
+  background-color: #000;
+}
+
+.post-detail {
+  margin-top: 8rem;
+  min-height: 80vh;
+}
+.post-detail__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+.post-detail__images {
+  width: 40%;
+}
+.post-detail__text {
+  width: calc(60% - 4rem);
+}
+.post-detail__title {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: -0.2em;
+}
+.post-detail__title_sub {
+  display: block;
+  font-size: 0.4em;
+}
+.post-detail__second-title {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.post-detail__time {
+  display: block;
+  font-size: 1.4rem;
+  color: #757474;
+  margin-top: 1rem;
+}
+.post-detail__sentence {
+  font-size: 1.6rem;
+  color: #333;
+  margin-top: 1.8rem;
+  line-height: 2;
+}
+.post-detail__sentence p:not(:nth-of-type(1)) {
+  margin-top: 1rem;
+}
+.post-detail__sell {
+  font-size: 1.6rem;
+  background: #f5f2ea;
+  padding: 1.5rem 2rem;
+  margin: 1.6rem 0 0;
+}
+.post-detail__sell ul {
+  margin: 1rem 0 1rem;
+}
+.post-detail__sell li {
+  display: block;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+.post-detail__sell li:before {
+  content: "・";
+}
+.post-detail__sell li:not(:nth-of-type(1)) {
+  margin-top: 1rem;
+}
+.post-detail__sell a {
+  color: #000;
+}
+.post-detail__info {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #757474;
+}
+.post-detail__info a {
+  color: inherit;
+}
+.post-detail__tag {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 2rem;
+}
+.post-detail__tag .common_tag-lists__item {
+  font-size: 1.2rem;
+}
+.post-detail__sns {
+  margin-top: 3rem;
+}
+
+.sns-buttons {
+  margin-top: 1rem;
+}
+.sns-buttons .fb-share-button {
+  position: relative;
+  top: -0.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .picture-slider .slide-arrow.-prev {
+    left: 2rem;
+  }
+  .picture-slider .slide-arrow.-next {
+    right: 2rem;
+  }
+  .picture-slider .slick-dots {
+    bottom: -4rem;
+  }
+  .picture-slider .slick-dots li {
+    margin: 0 0.2rem;
+  }
+  .picture-slider .slick-dots li button {
+    width: 0.8rem;
+    height: 0.8rem;
+    padding: 0;
+  }
+
+  .post-detail {
+    margin-top: 0;
+  }
+  .post-detail__inner {
+    display: block;
+  }
+  .post-detail__images {
+    width: 100%;
+    width: calc(100% + 60px);
+    margin: 0 -30px;
+  }
+  .post-detail__text {
+    width: 100%;
+    margin-top: 8rem;
+  }
+  .post-detail__title {
+    margin-top: 0;
+    font-size: 3.4rem;
+  }
+  .post-detail__second-title {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+  .post-detail__sns {
+    margin-top: 4rem;
+  }
+
+  .sns-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 1rem;
+  }
+  .sns-buttons > * {
+    margin: 0.5rem;
+  }
+  .sns-buttons .fb-share-button {
+    top: 0;
+  }
+}
+/* sp only */

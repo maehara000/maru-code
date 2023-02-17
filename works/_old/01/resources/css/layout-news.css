@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* ==================
+ * Newsで使うパーツ
+ * ================== */
+.left-main-float-box {
+  margin: 19px 0;
+}
+.left-main-float-box .red {
+  color: #CD0000;
+}
+.left-main-float-box .left-box {
+  float: left;
+  width: calc(100% - 147px);
+}
+.left-main-float-box .left-box.title {
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
+  padding: 0 0 5px;
+  margin: 0 0 12px;
+}
+.left-main-float-box .left-box.title img {
+  float: right;
+  margin: 0 21px 0 0;
+}
+.left-main-float-box .left-box.title:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.left-main-float-box .left-box.title p {
+  display: inline;
+}
+.left-main-float-box .left-box.title .right-image {
+  float: right;
+}
+.left-main-float-box .left-box.sentence {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.left-main-float-box .right-image {
+  float: right;
+  width: 98px;
+  transform: translate(-18px, 3px);
+}
+.left-main-float-box .image-text-box {
+  margin: 14px 0 40px;
+}
+.left-main-float-box .image-text-box .image {
+  float: left;
+}
+.left-main-float-box .image-text-box .text {
+  float: left;
+  font-size: 11px;
+  width: calc(100% - 80px);
+  margin: 0 0 0 15px;
+}
+.left-main-float-box .image-text-box:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media screen and (min-width: 768px) and (max-width: 910px) {
+  /* Tabletのみ2 */
+  .left-main-float-box .left-box {
+    float: none;
+    width: 100%;
+  }
+  .left-main-float-box .left-box.title {
+    float: none;
+    width: 100%;
+  }
+  .left-main-float-box .left-box.title img {
+    margin: 0;
+  }
+  .left-main-float-box .right-image {
+    float: none;
+    display: block;
+    margin: 30px auto 35px;
+    transform: translate(0);
+  }
+}
+@media screen and (max-width: 767px) {
+  /* smart phone */
+  .left-main-float-box {
+    display: block;
+    width: 100%;
+  }
+  .left-main-float-box .left-box {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .left-main-float-box .left-box.title {
+    display: block;
+    width: 100%;
+  }
+  .left-main-float-box .left-box.title img {
+    margin: 10px 5px;
+    float: left;
+  }
+  .left-main-float-box .right-image {
+    float: none;
+    display: block;
+    margin: 30px auto 35px;
+    transform: translate(0);
+    width: 60px;
+  }
+}

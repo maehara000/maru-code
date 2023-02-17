@@ -1,0 +1,496 @@
+@charset "UTF-8";
+/* A Modern CSS Reset */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+img {
+  image-rendering: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: "Noto Sans JP", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #A07373;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  -ms-overflow-y: scroll;
+  overflow-y: scroll;
+}
+body.-open {
+  overflow: hidden;
+}
+
+/* ============
+* common css start
+============ */
+/* ============
+* common parts start
+============ */
+html {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+  /* PC small window */
+  html {
+    font-size: 1.1vw;
+  }
+} /* PC small window */
+@media screen and (max-width: 767px) {
+  /* sp only */
+  html {
+    font-size: 1.1vw;
+  }
+} /* sp only */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.m0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+img {
+  image-rendering: auto;
+}
+
+.p-r {
+  position: relative;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.m0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.button-wrap {
+  max-width: 600px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+.button-wrap .button_note {
+  font-size: 1.4rem;
+  margin-top: 0.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .basic-button {
+    -webkit-transition: color 0.3s 0s, background-color 0.3s 0s;
+    transition: color 0.3s 0s, background-color 0.3s 0s;
+  }
+  .basic-button:hover {
+    background-color: #fff;
+    color: #ddd;
+  }
+  .basic-button:hover::before {
+    opacity: 0;
+  }
+  .basic-button:hover:after {
+    opacity: 1;
+  }
+} /* pc only */
+@media screen and (max-width: 767px) {
+  /* sp only */
+} /* sp only */
+/* レスポンシブ用表示切り分け */
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .sp { /* SPのみ表示する */
+    display: none !important;
+  }
+} /* pc only */
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .pc { /* PCのみ表示する */
+    display: none !important;
+  }
+} /* sp only */
+@media screen and (max-width: 1000px) {
+  /* pc big-window only */
+  .pc-big { /* PCの、大きいウィンドウのみ表示する */
+    display: none !important;
+  }
+} /* pc big-window only */
+/* ==================
+* アニメーション(.js-dp系)
+* ================== */
+/* アニメーション */
+.fade-dp {
+  opacity: 0;
+  -webkit-transform: translate(0px, 40px);
+          transform: translate(0px, 40px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_fade {
+  opacity: 0;
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_fade.-display {
+  opacity: 1;
+}
+
+.fade-dp_x_l {
+  opacity: 0;
+  -webkit-transform: translate(-40px, 0px);
+          transform: translate(-40px, 0px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_l.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_x_l_up {
+  opacity: 0;
+  -webkit-transform: translate(-40px, 40px);
+          transform: translate(-40px, 40px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_l_up.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_x_r {
+  opacity: 0;
+  -webkit-transform: translate(40px, 0px);
+          transform: translate(40px, 0px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_r.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_x_r_up {
+  opacity: 0;
+  -webkit-transform: translate(40px, 40px);
+          transform: translate(40px, 40px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_r_up.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.full-dp {
+  position: relative;
+}
+.full-dp:before, .full-dp:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: width 1.2s 0s cubic-bezier(0.5, 0.57, 0, 0.93);
+  transition: width 1.2s 0s cubic-bezier(0.5, 0.57, 0, 0.93);
+}
+.full-dp:before {
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+}
+.full-dp:after {
+  opacity: 0.7;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: width 1.2s 0.4s cubic-bezier(0.5, 0.57, 0, 0.93);
+  transition: width 1.2s 0.4s cubic-bezier(0.5, 0.57, 0, 0.93);
+}
+.full-dp.-right:before, .full-dp.-right:after {
+  left: 0;
+  right: auto;
+}
+.full-dp.-display:before, .full-dp.-display:after {
+  width: 0;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .sp-fade-dp {
+    opacity: 0;
+    -webkit-transform: translate(0px, 40px);
+            transform: translate(0px, 40px);
+    -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+    transition: opacity 1s 0s, -webkit-transform 1s 0s;
+    transition: transform 1s 0s, opacity 1s 0s;
+    transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+  }
+  .sp-fade-dp.-display {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+} /* sp only */
+/* end アニメーション(.js-dp系) */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+}
+.container.-wide1000 {
+  max-width: 1000px;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .container {
+    width: calc(100% - 30px);
+  }
+  .container.-footer {
+    width: calc(100% - 18rem);
+  }
+  .container-in-container {
+    width: calc(100% - 40px);
+  }
+} /* sp only */
+/* common parts end */
+/* -- common css end -- */
+/* ============
+* 以下、各共通ブロック style
+============ */
+/* ==================
+* g-wrapper
+* ================== */
+/* end g-wrapper */
+/* ==================
+* g-header
+* ================== */
+/* end g-header */
+/* ==================
+* g-footer
+* ================== */
+/* end g-footer */
+.body-image {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.body-image::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.2;
+}
+.body-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.lp-contents {
+  background-color: #FFF;
+  max-width: 500px;
+  width: calc(100% - 40px);
+  margin: auto;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.31);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.31);
+  position: relative;
+}
+.lp-contents .bg-image {
+  display: block;
+  width: 100%;
+}
+.lp-contents .text-block .text {
+  position: absolute;
+}
+.lp-contents .text-block .main-catch {
+  font-weight: bold;
+  font-size: 4rem;
+  color: #FFF;
+  top: 14%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+.lp-contents .text-block .sub-catch {
+  font-weight: bold;
+  font-size: 2.6rem;
+  color: #FFF;
+  top: 40%;
+  left: 2%;
+  right: 0;
+  margin: auto;
+}
+
+.fixed-area {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  color: #000;
+  padding: 10px;
+}
+.fixed-area .main {
+  font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+}
+.fixed-area .sub {
+  font-weight: normal;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+.fixed-area .button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #F00;
+  color: #FFF;
+  border-radius: 0.45rem;
+  padding: 10px;
+  margin-top: 10px;
+}
+.fixed-area .button.-small {
+  background-color: #656565;
+  font-size: 0.8em;
+}

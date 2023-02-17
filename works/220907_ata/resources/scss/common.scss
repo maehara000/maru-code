@@ -1,0 +1,61 @@
+@charset "utf-8";
+@import "_base";
+
+/* ============
+* common css start
+============ */
+
+.renewal-wrap {
+  font-family: "游明朝", YuMincho, "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  color: #2C2C2C;
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+}
+
+.gothic {
+  font-family: 'Noto Sans JP', "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  max-width: $mainWidth;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.m0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* -- common css end -- */
+
+
+

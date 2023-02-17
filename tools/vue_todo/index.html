@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- <link data-n-head="ssr" rel="icon" type="image/x-icon" href="https://d291vdycu0ht11.cloudfront.net/nuxt/static/production.ico"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://maru-code.com/resources/images/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <meta name="theme-color" content="#A72525">
+    <!-- meta情報 -->
+    <title>必要アイテムをメモするツール</title>
+    <!-- meta情報 -->
+    <!-- common resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!-- common resources -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1610BRY4R7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1610BRY4R7');
+  </script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="todoApp container">
+        <h1>必要アイテムを<br class="sp">メモするツール</h1>
+        <div class="all-delete-submit button button--delete button--all-delete" id="DeleteAllTaskSubmit" @click="deleteAllTasks">全削除</div>
+
+        <section class="add-task">
+          <h2>アイテムを追加</h2>
+
+          <div class="add-task_inner">
+            <div class="input-form">
+
+              <input v-model.trim="taskText" type="text" class="add-task__input item-name" id="addTaskInput" placeholder="例：ニッケル" value=""> ×
+              
+              <input v-model="taskCount" type="number" class="add-task__input item-count" id="addTaskCountInput" placeholder="例：5" min="0" value=""> 個
+            </div>
+
+            <input type="button" value="リストに追加" class="add-task__submit button button--submit" id="addTaskSubmit" @click="createNewTask" :disabled="isDisabled">
+          </div>
+        </section>
+
+        <ul class="task-list" id="taskList">
+          <li :data-id="task.id" v-for="(task, index) in taskArr" :key="index">
+            <input type="checkbox" :checked="task.checked" :data-id="task.id" @click="taskCheckUpdate($event)">
+
+            <input type="text" class="text js-text" contenteditable="true" :data-id="task.id" :value="task.contents" @keydown="taskContentsUpdate($event)"></input> × 
+
+            <input type="number" class="count" :value="task.count" :data-id="task.id" @change="taskCountUpdate($event)" @keydown="taskCountUpdate($event)" min="0">
+            
+            <input class="delete button button--delete" :data-id="task.id" type="button" tabindex="-1" @click="deleteSingleTask($event)"></input>
+          </li>
+          <li v-if="taskArr.length === 0" class="no-task">アイテムはまだありません</li>
+        </ul>
+
+      </div>
+      <div class="container">
+        <details class="details">
+          <summary>使い方・注意点</summary>
+          <article class="note">
+            <h2>使い方</h2>
+            <p>「武器生成のためにニッケル5個と合金4個必要だけど、フィールドに出たら何が必要か忘れちゃう」という時にご利用ください。</p>
+            <p>私は「サイクルフロンティア」で使ってます。</p>
+            <p>ゲーム内のどこかしらの画面で「必要アイテム一覧」が確認できるゲームもありますが、私としては「サブディスプレイで常に必要アイテム一覧を表示させときたい」派なので、ブラウザで当ページを開きっぱなしにしてサブディスプレイに表示させてます</p>
+            <p>もしくはスマホで開いて、いつでも見れるようにしてます。</p>
+          </article>
+          <article class="note">
+            <h2>ご要望</h2>
+            <p>
+              javascriptの練習で作ったものではありますが、より良いものにしたいと思ってるので、何か改善点などあれば<a href="https://twitter.com/pakkan316" target="_blank">@pakkan</a>に直接お知らせください。
+            </p>
+          </article>
+          <article class="note">
+            <h2>注意点</h2>
+            <p>当サイトはJavascript API「Local Strage」を使用し、入力したデータをブラウザに保存しています。</p>
+            <p>その為基本的には本人しか確認できません。</p>
+            <p>しかし悪意あるユーザーにより入力内容を覗き見される可能性もあるので、個人情報等の入力はお控えください。</p>
+          </article>
+        </details>
+      </div>
+    </div>
+
+    
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11"></script>
+    <script src="task-app.js"></script>
+  </body>
+</html>

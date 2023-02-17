@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <style>
+    body {
+      background-color: #333;
+      padding: 200px 0 400px;
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+    }
+
+    .image-block {
+      margin: 200px auto 0;
+      max-width: 2000px;
+    }
+
+    .image {
+      display: table;
+      margin: 10% auto 0;
+      text-align: center;
+      color: #fff;
+      font-size: 1.2em;
+      text-decoration: none;
+    }
+    .image:hover {
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+      width: auto;
+    }
+
+    .buttons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      width: 100%;
+      backdrop-filter: blur(6px);
+    }
+
+    input {
+      margin: 0;
+    }
+
+    label {
+      margin-right: 0.5rem;
+    }
+
+    input,
+    label {
+      cursor: pointer;
+    }
+
+    .big {
+      font-size: 1.65em;
+      margin: 0 0.2em 0;
+    }
+  </style>
+
+  <div class="buttons">
+    <label for="resize100"><input type="radio" id="resize100"
+     name="resize" value="100">
+    100px</label>
+    <label for="resize150"><input type="radio" id="resize150"
+     name="resize" value="150">
+    150px</label>
+
+    <label for="resize250"><input type="radio" id="resize250"
+     name="resize" value="250">
+    250px</label>
+
+    <label for="resize500"><input type="radio" id="resize500"
+     name="resize" value="500">
+    500px</label>
+
+    <label for="resize700"><input type="radio" id="resize700"
+     name="resize" value="700">
+    700px</label>
+
+    <label for="resize1000"><input type="radio" id="resize1000"
+     name="resize" value="1000">
+    1000px</label>
+
+    <label for="resize2000"><input type="radio" id="resize2000"
+     name="resize" value="2000" checked>
+    Default</label>
+
+    <!-- <select name="bgColor" id="bgColor">
+      <option value="gray">gray</option>
+      <option value="darkGray">darkGray</option>
+      <option value="white">white</option>
+    </select> -->
+  </div>
+  <h1>合計<span class="js-num big">0</span>枚</h1>
+
+  <div class="image-block">
+    <a class="image" href="./04_780x140.jpg" target="_blank">
+      <p>04_780x140.jpg</p>
+      <img src="./04_780x140.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./05_10_1040x1040.jpg" target="_blank">
+      <p>05_10_1040x1040.jpg（10とサイズ共通）</p>
+      <img src="./05_10_1040x1040.jpg" alt="">
+    </a>
+
+    <a class="image" href="./06_770x500.jpg" target="_blank">
+      <p>06_770x500.jpg</p>
+      <img src="./06_770x500.jpg" alt="">
+    </a>
+
+    <a class="image" href="./07_980x150.jpg" target="_blank">
+      <p>07_980x150.jpg</p>
+      <img src="./07_980x150.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./08_970x600.jpg" target="_blank">
+      <p>08_970x600.jpg</p>
+      <img src="./08_970x600.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./09_1200x746.jpg" target="_blank">
+      <p>09_1200x746.jpg</p>
+      <img src="./09_1200x746.jpg" alt="">
+    </a>
+    
+    <a class="image" href="./11_320x90.jpg" target="_blank">
+      <p>11_320x90.jpg<br>
+        <small>申し送り：「吹き出し」「商品画像」削除</small>
+      </p>
+      <img src="./11_320x90.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./12_400x200.jpg" target="_blank">
+      <p>12_400x200.jpg</p>
+      <img src="./12_400x200.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./13_780x300.jpg" target="_blank">
+      <p>13_780x300.jpg</p>
+      <img src="./13_780x300.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./14_816x248.jpg" target="_blank">
+      <p>14_816x248.jpg</p>
+      <img src="./14_816x248.jpg" alt="">
+    </a>
+
+    
+    <a class="image" href="./15_820x410.jpg" target="_blank">
+      <p>15_820x410.jpg</p>
+      <img src="./15_820x410.jpg" alt="">
+    </a>
+
+    <a class="image" href="./16_900x550.jpg" target="_blank">
+      <p>16_900x550.jpg</p>
+      <img src="./16_900x550.jpg" alt="">
+    </a>
+  </div>
+
+  <script>
+    // const allImages = [
+    //   'aaaaaaaa.jpg',
+    // ];
+
+    $(document).ready(function() {
+      $("input[name='resize']").click(function() {
+        value = $("input[name='resize']:checked").val();
+        $('.image-block').css({
+          'maxWidth': value+'px',
+        });
+      });
+
+      let imgElm = $('.image-block > .image')
+      let imgLength = imgElm.length;
+      $('.js-num')[0].innerHTML = imgLength;
+  });
+  </script>
+</body>
+</html>

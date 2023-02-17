@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import "_reset";
+@import "_base";
+
+
+.g-header {
+  background: #FFF;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+
+  &__logo {
+    color: #000;
+    text-decoration: none;
+    font-size: 4rem;
+  }
+}
+.g-footer {
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1rem 1rem 3rem;
+
+  a {
+    color: #000;
+  }
+}
+
+
+
+
+
+/* ==================
+* レスポンシブ用表示切り分け
+.sp → SPのみ表示する
+.pc → PCのみ表示する
+.pc-big → PCの大きいウィンドウのみ表示する
+* ================== */
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .sp { /* SPのみ表示する */
+    display: none !important;
+  }
+} /* pc only */
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .pc { /* PCのみ表示する */
+    display: none !important;
+  }
+} /* sp only */
+
+@media screen and (max-width: 1000px) {
+  /* pc big-window only */
+  .pc-big { /* PCの大きいウィンドウのみ表示する */
+    display: none !important;
+  }
+} /* pc big-window only */
+
+
+
+/* ========================================================= 
+* ▼ レスポンシブ（主にスマホ） ▼
+* ========================================================= */
+@import "_r-style";

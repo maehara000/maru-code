@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* ============
+* common css start
+============ */
+.renewal-wrap {
+  font-family: "游明朝", YuMincho, "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  color: #2C2C2C;
+}
+.renewal-wrap * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+.gothic {
+  font-family: "Noto Sans JP", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.m0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* -- common css end -- */
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF;
+  -webkit-transition: opacity 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s;
+  z-index: 99;
+}
+.loading:before, .loading:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  -webkit-transition: opacity 0.7s 0s;
+  transition: opacity 0.7s 0s;
+}
+.loading:before {
+  background-image: url("../images/common/loading_logo_outside.svg");
+  -webkit-animation: 10s linear infinite rotate;
+          animation: 10s linear infinite rotate;
+  width: 150px;
+  height: 150px;
+}
+.loading:after {
+  background-image: url("../images/common/loading_logo_inside.svg");
+  width: 130px;
+  height: 130px;
+}
+.loading.-loaded {
+  opacity: 0;
+}
+.loading.-loaded:before, .loading.-loaded:after {
+  opacity: 0;
+}
+
+@-webkit-keyframes rotate {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* 出力用にマルチバイト文字を入れる */
+
+html {
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  background: rgb(245, 244, 232);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+
+  * {
+    box-sizing: border-box;
+
+    &:focus {
+      outline: 1px solid #999;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 0.4em;
+  font-size: 2rem;
+}
+
+a {
+  color: rgb(0, 123, 255);
+}
+
+.container {
+  max-width: calc(100% - 4.0rem);
+  width: 100.0rem;
+  margin: 0 auto;
+};
+
+
+input {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+input[type="text"],
+input[type="number"] {
+  border-radius: .0rem;
+  font-size: 1.6rem;
+  border: 1px solid #ddd;
+  padding: 0.2em;
+}
+
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  html {
+    font-size: 1.8vw;
+  }
+} /* sp only */
+
+
+
+
+
+
+
+
+/* レスポンシブ用表示切り分け */
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .sp { /* SPのみ表示する */
+    display: none !important;
+  }
+} /* pc only */
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .pc { /* PCのみ表示する */
+    display: none !important;
+  }
+} /* sp only */
+
+@media screen and (max-width: 100.0rem) {
+  /* pc big-window only */
+  .pc-big { /* PCの、大きいウィンドウのみ表示する */
+    display: none !important;
+  }
+} /* pc big-window only */

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- meta情報 -->
+    <link rel="icon" type="image/x-icon" href="https://maru-code.com/resources/images/favicon.ico">
+    <title>拡張機能「コーディングサポート」開発</title>
+    <!-- meta情報 -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1610BRY4R7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1610BRY4R7');
+  </script>
+  </head>
+  <body>
+
+    <div class="main">
+      <p><span style="font-size: 1.4em; font-weight: bold;color: red;">最初に：画面右側にベージュの操作パネルが出て見づらい場合、画面右側にあるピンク色のボタン「H」を押してください。操作パネルが消えて読みやすくなります。</span></p>
+
+      <h1>コーディング効率化ツール「Coding Support」</h1>
+
+      <p>以下の悩みを解決する目的で作りました。</p>
+
+      <ul>
+        <li>デザインと全く同じ見た目でコーディングしたい</li>
+        <li>スクロールアニメーション開発時のリロード回数を減らしたい</li>
+      </ul>
+
+      また、開発にあたって以下の技術を使用しました。
+
+      <ul>
+        <li>Javascript</li>
+        <li>Local Strage(Cookieの上位互換)</li>
+      </ul>
+
+
+      <h2>「Coding Support」で出来ること</h2>
+      <ul>
+        <li>html cssマークアップを効率化出来る</li>
+        <li>フォトショップのようなガイドラインをブラウザで表示出来る</li>
+        <li>jpg等の一枚画像を重ねて表示できる（カバー画像）</li>
+        <li>カバー画像は任意の値で透過させたり、フィルターをかけたり、または上部からどれだけズラすか設定できる</li>
+        <li>スクロールアニメーションや、ローディングアニメーションを使用するサイトでは、ロードさせなくてもボタンクリックでclassを付けたり外したり出来る</li>
+      </ul>
+
+      <p>
+        画像URLや設定値などは「localstrage（cookieの上位互換）」に保存される為、値は保持されます。<br>
+        「リロードしたら設定が飛ぶ」というような事はありません。
+      </p>
+
+      <h2>導入方法</h2>
+      <p>以下の２通りがあります。</p>
+      <ul>
+        <li>①URL（<a href="https://maru-code.com/tools/cs/main.js" target="_blank">https://maru-code.com/tools/cs/main.js</a>）をscriptタグでhtmlファイルに直に読み込む。</li>
+        <li>②URL（<a href="https://maru-code.com/tools/cs/main.js" target="_blank">https://maru-code.com/tools/cs/main.js</a>）を、GoogleChrome拡張機能「<a href="https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm?hl=ja" target="_blank">ScriptAutoRunner</a>」の中で読み込む（推奨）</li>
+      </ul>
+      <p>①の例：下記のコードをhtmlファイル閉じbodyタグ直前等に貼り付けます。<br><pre><code>&lt;script src=&quot;https://maru-code.com/tools/cs/main.js&quot;&gt;&lt;/script&gt;</code></pre></p>
+<br>
+      <p>本当は「Chrome拡張機能」として登録したかったところですが、技術的に断念しました。</p>
+      <p>私は②のScriptAutoRunnerを使用しています。（ScriptAutoRunnerとは、任意のjsを気軽に実行できる拡張機能です）</p>
+      <p>ちなみに①「htmlに直読み込み」をすると、スマホ実機でも確認できるというメリットもあります。ただし、納品前のコード消去は必須です。</p>
+
+
+      <h2>「Coding Support」の使い方</h2>
+      導入に成功したら、画面右側に以下のボタンが表示されます。
+      <figure>
+      <img src="images/image01.png" alt="[showtitle]: コントロールボタン"><figcaption>コントロールボタン</figcaption>
+      </figure>
+      
+
+      <p>当記事ではこれを「コントロールボタン」と呼びます。</p>
+      <p>コントロールボタン一番下の「H」を押すと、メインの「コントロールパネル」が表示されます。（または非表示になります）</p>
+
+      <figure>
+      <img src="images/image02.png" alt="[showtitle]: コントロールパネル"><figcaption>コントロールパネル</figcaption>
+      </figure>
+
+      <p>まずは「コントロールボタン」を解説します。</p>
+
+      <h2>「コントロールボタン」の説明</h2>
+      <figure>
+      <img src="images/image01.png" alt="[showtitle]: コントロールボタン"><figcaption>コントロールボタン</figcaption>
+      </figure>
+
+      <ul>
+        <li>「G」→ ガイドラインの略。クリックでガイドラインの表示非表示を切り替えます。</li>
+        <li>「P」→ Pictureの略。クリックでカバー画像の表示非表示を切り替えます。</li>
+        <li>「A」→ Animetionの略。クリックでアニメーション用class等のclassを付けたり外したりします。</li>
+        <li>「H」→ Hideの略。クリックでコントロールパネルの表示非表示を切り替えます。</li>
+      </ul>
+      
+      <h2>「コントロールパネル」の説明</h2>
+      <figure>
+      <img src="images/image02.png" alt="[showtitle]: コントロールパネル"><figcaption>コントロールパネル</figcaption>
+      </figure>
+
+      <p>「ガイドライン」については、inputの「placeholder（初期値）」に詳細を書いているのでここでは省きます。</p>
+
+      <h2>「カバー画像」の使い方</h2>
+
+      <ul>
+        <li>参考用画像「<a href="https://maru-code.com/tools/cs/images/image03.jpg">https://maru-code.com/tools/cs/images/image03.jpg</a>」のURLを、コントロールパネル「画像 URL」に貼り付けます。<br>すると当ページのデザイン画像が表示されます。</li>
+        <li>コントロールボタン「P」で、カバー画像の表示非表示を切り替えます。</li>
+      </ul>
+
+      <p>画像 URLはhttp形式で取得する必要があるので、ローカルサーバーやタスクランナーツールを用いるか、開発用サーバーに一時アップすると作業しやすいかと思います。</p>
+
+      
+
+      <p>一応、「カバー画像」の「ページ上部からの距離」「透過度」「フィルター」だけ簡単に解説すると、それぞれcssの以下の部分に当たります。</p>
+
+      <ul>
+        <li>ページ上部からの距離 → <code>top: ココに入る px;</code></li>
+        <li>透過度(css) → <code>opacity: ココに入る;</code></li>
+        <li>フィルター(css) → <code>filter: ココに入る;</code></li>
+      </ul>
+      <p>その為、css形式で書き込む必要があります。</p>
+      <p>
+        filterは、「今見ているのが本物かカバー画像か分からなくなる」という事故を防ぐ為に追加しました。明度や彩度を変えたりすると使いやすいです。
+      </p>
+
+      <p>
+        <pre>filterの例：<code>saturate(80%) sepia(100%)</code></pre>
+      </p>
+
+      <h3>「アニメーションclass操作」の説明</h3>
+      動きのあるサイトでよく見られる<strong>「スクロールしたら、“js-toggle”というclassがある要素に、“display”というclassが付与される」</strong>という挙動を例として説明します。
+
+      <dl>
+        <dt>トリガーclass</dt>
+        <dd>
+          「js-toggle」と入力します。
+        </dd>
+      </dl>
+      <dl>
+        <dt>トグルclass</dt>
+        <dd>
+          「display」と入力します。<br>
+        </dd>
+      </dl>
+      <p>こうすることで、コントロールボタンの「A」をクリックすると、<strong>「.js-toggle要素」に対して「.display」の付け外し</strong>が発動します。</p>
+
+      <p>※実務ではそれぞれ任意のclass名に変更してください。</p>
+
+      <p>表示確認用に、以下に「スクロールしたら表示される要素」を書きました。</p>
+      <p>ちなみにこちらは、私が自作したjqueryプラグイン「WindowInDisplay.js」を使用しています。</p>
+      <div class="test">
+        <div class="js-toggle">これらの要素にアニメーションが走ります。</div>
+        <div class="js-toggle">これらの要素にアニメーションが走ります。</div>
+        <div class="js-toggle">これらの要素にアニメーションが走ります。</div>
+        <div class="js-toggle">これらの要素にアニメーションが走ります。</div>
+        <div class="js-toggle">これらの要素にアニメーションが走ります。</div>
+      </div>
+
+      <p>では、上記のアニメーション要素が表示された状態で、試しに、当ページのコントロールパネルで以下の操作をしてみてください。</p>
+      <ul>
+        <li>トリガーclass：「js-toggle」を入力</li>
+        <li>トグルclass：「display」を入力</li>
+      </ul>
+
+      <p>そして、コントロールボタンで以下の操作をします。</p>
+      <ul>
+        <li>「A」ボタンをクリック</li>
+      </ul>
+
+      <p>
+        すると、上記アニメーション要素が消えたり出現したりします。<br>
+        要素が非表示の状態でまたスクロールすると、再度スクロールした時の挙動を確認できます。<br>
+        これにより、<strong>「アニメーション確認の為に再読み込みする」必要が無くなり、工数削減に大幅に貢献できます</strong>。
+      </p>
+
+      <p>これは「読み込み完了時にclass付与する」などのオープニングアニメーション実装時にも活用できます。</p>
+
+
+      <p>以上、自作ツール「Coding Support」の解説でした。</p>
+
+    </div>
+
+
+    
+
+
+    <script src="main.js"></script>
+    <script src="windowInDisplay.js"></script>
+  </body>
+</html>

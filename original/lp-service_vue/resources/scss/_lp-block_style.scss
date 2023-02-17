@@ -1,0 +1,177 @@
+
+.body-image {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+  }
+
+  > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
+
+
+.text {
+  position: absolute;
+  white-space: pre-line;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+/* LPパターン別スタイリング */
+.lp-contents {
+  background-color: #FFF;
+  margin: auto;
+  box-shadow: 0 0 4px rgb(0 0 0 / 31%);
+  position: relative;
+
+  .bg-image {
+    display: block;
+    width: 100%;
+  }
+
+  .logo {
+      width: 100%;
+      top: 1%;
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+
+    .mainCatch {
+      font-family: $mincho;
+      width: 100%;
+      font-size: 3.8rem;
+      top: 0.5%;
+    }
+    .subCatch {
+      font-family: $mincho;
+      font-weight: 400;
+      width: 100%;
+      font-size: 2.6rem;
+      top: 4.5%;
+    }
+
+    .pointList {
+      top: 35.8%;
+      width: 100%;
+      
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      
+      li {
+        font-weight: bold;
+        font-size: 1.7rem;
+        width: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        word-break: break-word;
+      }
+    }
+
+    .second_titleEn {
+      top: 45.2%;
+      font-size: 2rem;
+    }
+
+    .second_titleJa {
+      top: 47%;
+      font-size: 4.6rem;
+      font-family: "Noto Serif JP", serif;
+      color: #af9c6b;
+    }
+
+    .setDetail {
+      top: 51.6%;
+      text-align: left;
+      width: 50%;
+      font-weight: 500;
+      left: 50%;
+    }
+
+    .normalPrice {
+      top: 62.6%;
+      text-align: left;
+      width: 50%;
+      font-weight: 500;
+      font-family: "Noto Serif JP", serif;
+      left: 30.1%;
+      font-size: 2.3rem;
+      color: #877B3E;
+    }
+
+    .offPercent {
+      top: 64.5%;
+      text-align: left;
+      width: auto;
+      font-weight: 500;
+      font-family: "Noto Serif JP", serif;
+      left: 17.2%;
+      font-size: 4.2rem;
+      color: #fff;
+    }
+
+    .discountPrice {
+      top: 64%;
+      text-align: left;
+      width: auto;
+      font-weight: 500;
+      font-family: $mincho;
+      left: 50.2%;
+      font-size: 5.4rem;
+      color: #af9c6b;
+    }
+
+    .cvButton {
+      top: 69.9%;
+      font-weight: 500;
+      font-size: 2.6rem;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+    }
+
+    .note_title {
+      top: 80%;
+      top: 76%;
+      font-size: 1.8rem;
+    }
+
+    .note_sentence {
+      top: 78%;
+      text-align: left;
+      width: 80%;
+      font-weight: 500;
+      left: 10.2%;
+      font-size: 1.6rem;
+    }
+
+
+  &.type-a {
+    color: #887a3d;
+  } //.&.type-a
+} //.lp-contents

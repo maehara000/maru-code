@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "roku"
+AuthUserFile "/home/hebtbqbo/public_html/maru-code.com/works/.htpasswd"
+require valid-user
+
+

@@ -1,0 +1,374 @@
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .section_first-view {
+    .center-block {
+      .main-logo {
+        width: 160px;
+      }
+
+      .text-block {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .section {
+    margin-top: 0;
+  }
+
+  .white-card {
+    top: -60px;
+    margin-bottom: -80px;
+  }
+
+  .section_target {
+    .sentence {
+      font-size: 13px;
+    }
+
+    .end-catch {
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  }
+  
+  .section_service {
+    margin-top: 30px;
+  }
+
+  .service_list {
+    display: block;
+    width: 100%;
+    margin: 0;
+
+    .list-item {
+      width: 100%;
+      margin: 50px 0 0;
+      
+      &:nth-of-type(-n+2) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &:nth-of-type(1) {
+        margin-top: 0;
+      }
+
+      .icon-block {
+        width: 120px;
+        height: 120px;
+        
+        .icon_coding {
+          width: (92*0.75+px);
+        }
+
+        .icon_wp {
+          width: (98*0.75+px);
+        }
+
+        .icon_lp {
+          width: (80*0.75+px);
+        }
+        .icon_cart {
+          width: (87*0.75+px);
+        }
+      }
+
+      .service_sentence {
+        margin: 10px 0 0;
+      }
+    }
+
+    &.ptn-b {
+      .list-item {
+        width: 100%;
+        margin: 30px 0 0;
+        
+        &:nth-of-type(1) {
+          margin-top: 0;
+        }
+        
+        .text-block {
+          .service_sentence {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  .example-block {
+    padding: 30px 10px 10px;
+    > .title {
+      font-size: 12px;
+      width: 43px;
+      padding: 0;
+      top: -11px;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .example-items {
+      margin-left: -5px;
+      margin-right: -5px;
+      
+      .item {
+        max-width: 100%;
+        width: calc(50% - 20px);
+        min-height: 0;
+        height: 36vw;
+        margin: 5px;
+        
+        .text {
+          .page-name {
+            font-size: 3.7vw;
+          }
+
+          .price {
+            font-size: 3.3vw;
+          }
+        }
+      }
+    }
+
+    .total-price {
+      font-size: 5vw;
+      margin-top: 2.4vw;
+      
+      .small {
+        display: block;
+      }
+    }
+  }
+
+  .guidance-block {
+    font-size: 12px;
+  }
+
+  .section_profile { 
+    padding: 50px 0 40px;
+    
+    .profile_main {
+      display: block;
+      width: 100%;
+      
+      .image-block {
+        width: 250px;
+        margin: 0 auto;
+      }
+
+      .text-block {
+        margin: 20px 0 0;
+        width: 100%;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .section_price {
+    padding: 50px 0 40px;
+    margin: -100px 0 0;
+  }
+
+  #skillChartSp {
+    margin: 0 auto;
+  }
+
+  .skill {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    
+    .text-contents {
+      margin: 30px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 370px;
+
+      .text {
+        .en {
+          font-size: 20px;
+          position: relative;
+        }
+
+        .ja {
+          font-size: 12px;
+        }
+        
+        &.text01 {
+          top: 92px;
+          left: 3px;
+          right: 0;
+        }
+
+        &.out-text {
+          position: static;
+          width: auto;
+          display: inline-block;
+          width: 50%;
+          
+          .en {
+            &:before {
+              content: "";
+              display: block;
+              // width: 0;
+              width: 104%;
+              height: 10px;
+              position: absolute;
+              left: -3px;
+              top: 20px;
+              z-index: -1;
+              transition: width 0.3s 0.3s;
+            }
+          }
+        }
+
+        &.text02 {
+          .en {
+            &:before {
+              background-color: #00bbdd44;
+            }
+          }
+        }
+
+        &.text03 {
+          .en {
+            &:before {
+              background-color: #dd00d044;
+            }
+          }
+        }
+
+        &.text04 {
+          .en {
+            &:before {
+              background-color: #00dd2144;
+            }
+          }
+        }
+
+        &.text05 {
+          .en {
+            &:before {
+              background-color: #ddb30044;
+            }
+          }
+        }
+      }
+
+      &.-display {
+        .text {
+          .en {
+            &:before {
+              width: 104%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .faq-items  {
+    .faq-item {
+      .title {
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .all-controll-button {
+    width: 200px;
+    padding: 4px 30px 4px;
+    font-size: 14px;
+    margin: 20px auto 0;
+    
+    &:after {
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 6px solid #93da8d;
+      top: calc(50% - 2px);
+      right: 12px;
+    }
+  }
+
+  .faq-items {
+    .faq-item {
+      margin-top: 20px;
+      
+      .title {
+        font-size: 18px;
+        
+        &:after {
+          border-right: 8px solid transparent;
+          border-left: 8px solid transparent;
+          border-top: 9px solid #fff;
+          top: calc(50% - 2px);
+          right: 12px;
+        }
+      }
+
+      .contents {
+        font-size: 16px;
+        padding: 6px 16px 6px 44px;
+      }
+    }
+  }
+
+  .section_faq {
+    padding: 40px 0;
+  }
+
+  .contact-block,
+  .banner-block {
+    .catch-text {
+      font-size: 4vw;
+    }
+
+    .contact-banner {
+      font-size: 5vw;
+      padding: 2vw 2vw 1.0vw;
+    }
+  }
+
+  .fixed-banner {
+    padding: 5px 0 20px;
+    
+    .banner-close-button {
+      top: -15px;
+      right: 10px;
+    }
+  }
+
+  .section_contact {
+    padding: 40px 0 50px;
+  }
+
+  .form-table {
+    .inquery {
+      font-size: 10px;
+    }
+
+    tr {
+      th {
+        font-size: 16px;
+      }
+    }
+
+    .textarea {
+      height: 160px;
+    }
+  }
+
+
+
+  .submit-button {
+    font-size: 16px;
+  }
+
+
+
+}
+

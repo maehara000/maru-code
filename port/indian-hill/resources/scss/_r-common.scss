@@ -1,0 +1,278 @@
+@media screen and (max-width: 767px) {
+/* smart phone */
+
+body {
+  font-size: 14px;
+  max-width: 100%;
+  -ms-overflow-x: hidden;
+      overflow-x: hidden;
+}
+
+
+
+
+
+
+  /* ==================
+   * PC/SP表示切替class
+   * ================== */
+  ._pc-only {
+    display: none;
+  }
+
+  ._sp-only {
+    display: block;
+  }
+  ._sp-only.-i {
+    display: inline;
+  }
+  ._sp-only.-ib {
+    display: inline-block;
+  }
+
+
+  .arrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    padding: 0 0 0 6px;
+  } 
+
+  .common-title {
+    font-size: 33px;
+    text-align: left;
+    
+    &.-insta {
+      font-size: 13px;
+      text-align: center;
+      color: #999;
+      
+      &:before {
+        content: "";
+        width: 17px;
+        height: 17px;
+        left: -5px;
+        top: 4px;
+      }
+    }
+  }
+
+
+  .magazine-items {
+    display: block;
+    margin-top: 21px;
+    
+    .item {
+      width: 100%;
+      margin: 25px 0 0;
+      
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:nth-of-type(2n) {
+        margin-left: 0;
+      }
+
+      a {
+        .image-block {
+          height: 60vw;
+        }
+
+        .text-block {
+          h3 {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+
+  .g-wrapper {
+    max-width: 100%;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+  }
+
+  .nav-click_out-contents {
+    position: relative;
+    left: 0;
+    width: 100%;
+    transition: left 0.3s 0s;
+    
+    &:before {
+      content: "";
+      display: block;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(0 0 0 / 58%);
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      transition: all 0.3s 0s;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    &.-open {
+      left: 86vw;
+      
+      &:before {
+        opacity: 1;
+        visibility: visible;
+        left: 86vw;
+      }
+    }
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  .g-header {
+    background-color: #fff;
+    padding: 9px 0 !important;
+
+    &:after {
+      content: none;
+    }
+
+    .logo-block {
+      width: 147px !important;
+      height: 42px !important;
+    }
+
+    .global-nav {
+      display: none;
+    }
+
+    .sp-nav-button {
+      display: block;
+      width: 13px;
+      height: 10px;
+      position: absolute;
+      left: 17px;
+      top: 43%;
+      transition: opacity 0.3s 0s;
+      
+      &.-open {
+        opacity: 0;
+      }
+    }
+  }
+
+  .svg-color-change path{
+    color: #000000 !important;
+  }
+
+
+  .sp-header {
+    display: block;
+    background-color: #fff;
+    padding: 60px 24px;
+    position: fixed;
+    top: 0;
+    width: 86vw;
+    height: 100vh;
+    box-sizing: border-box;
+    @include notosan;
+    font-weight: 600;
+    font-size: 3.4vw;
+    z-index: 10001;
+    transition: all 0.3s 0s;
+    left: -86vw;
+
+    .close-button {
+      width: 4vw;
+      position: fixed;
+      top: 0;
+      left: 86vw;
+      padding: 20px;
+      transition: all 0.3s 0s;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.-open {
+      left: 0;
+      
+      .close-button {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  } // .sp-header
+    
+
+  .sp-common-menu {
+    @include notosan;
+    font-weight: 600;
+    letter-spacing: 2px;
+    
+    .nav_items {
+      display: block;
+      padding: 0;
+
+      .item {
+        display: block;
+        padding-top: 10px;
+
+        &:first-of-type {
+          padding-top: 0;
+        }
+      }
+    }
+
+    .information {
+      color: #808080;
+      margin-top: 40px;
+
+      .mail-address {
+        margin-top: 10px;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .sns-icon {
+      margin-top: 20px;
+
+      .icon {
+        display: block;
+        width: 15px;
+      }
+    }
+  }
+
+
+
+  .contact-button_block {
+    margin-top: 60px;
+    
+    .contact-button {
+      font-size: 16px;
+      width: 260px;
+      padding: 5px 0 7px;
+    }
+  }
+
+  .footer-nav {
+    display: none;
+  }
+
+  .g-footer {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    
+    .copyright {
+      margin-top: 60px;
+    }
+  }
+
+
+} /* smart phone */

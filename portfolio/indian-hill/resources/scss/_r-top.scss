@@ -1,0 +1,48 @@
+@media screen and (max-width: 767px) {
+  /* smart phone */
+
+
+  .section_slider {
+    height: calc(100vh - 60px);
+    padding: 60px 0 0;
+    
+    .top-slider {
+      .slick-list {
+        .slide-item {
+          img {
+            object-fit: cover;
+            object-position: center;
+            height: calc(100vh - 60px);
+          }
+        }
+      }
+    }
+
+    .scroll-button {
+      left: 0;
+      right: -13vw;
+    }
+  }
+
+  .section_magazine {
+    margin-top: 38px;
+    
+    .link-wrap {
+      margin-top: -11px;
+    }
+  }
+
+
+  .section_insta {
+    margin-top: 64px;
+  }
+
+
+
+
+
+
+
+
+
+} /* smart phone */

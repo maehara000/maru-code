@@ -1,0 +1,130 @@
+
+/* ========================================================================
+* サイト内全体に共通するタイプのstyle start
+* ======================================================================== */
+html {
+  font-size: 10px; // あらゆる幅をrem指定で制作する
+}
+body {
+  font-family: 'Noto Sans JP', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000;
+  overflow-y: scroll;
+}
+
+h1,h2,h3 {
+  font-weight: 400;
+}
+
+a {
+  color: rgb(0, 144, 163);
+}
+.g-wrapper {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: calc(100% - 60px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--small {
+    max-width: 800px;
+  }
+}
+
+
+
+/* ==================
+* 複数個所で使用するパーツ
+* ================== */
+.flex-box {
+  display: flex;
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.button {
+  display: block;
+  transition: transform 0.3s 0s;
+  max-width: 66.4rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .button {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+} /* pc only */
+
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  html {
+    font-size: 1.25vw;
+  }
+} /* sp only */
+
+
+.common_head {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-weight: 400;
+
+  &__main {
+    display: block;
+    font-size: 2.4rem;
+  }
+
+  &__sub {
+    display: block;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* pc only */
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+} /* pc only */
+@media screen and (max-width: 767px) {
+    /* sp only */
+  html {
+    font-size: 2.2vw;
+  }
+
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .common_head {
+    &__main {
+      font-size: 3.2rem;
+    }
+  
+    &__sub {
+      display: block;
+      font-size: 1.2rem;
+    }
+  }
+} /* sp only */
+
+/* ========================================================================
+* サイト内全体に共通するタイプのstyle end
+* ======================================================================== */
+

@@ -1,0 +1,359 @@
+@charset "utf-8";
+@import "_base";
+
+/* ==================
+* TOPページ
+* ================== */
+
+
+.section_kv {
+
+  .inner {
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    width: 100%;
+    min-height: 550px;
+    max-height: 800px;
+    height: 100vh;
+    position: relative;
+  }
+
+  .human-list {
+
+    .human {  
+      position: absolute;
+
+      .text-image {
+        display: block;
+        position: relative;
+        width: 100%;
+        transform: rotate(0deg);
+      }
+
+      .image {
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 90%;
+      }
+
+      $ratio: 9.27;
+
+      &--01 {
+        left: -1%;
+        top: 30.9%;
+        width: 38.7%;
+        min-width: 38.7*$ratio+px;
+      }
+
+      &--02 {
+        left: 28.6%;
+        top: 3.6%;
+        width: 17.3%;
+        min-width: 17.3*$ratio+px;
+
+        .image {
+          width: 84%;
+        }
+      }
+
+      &--03 {
+        left: 41.8%;
+        top: 55.9%;
+        width: 19.8%;
+        min-width: 19.8*$ratio+px;
+
+        .image {
+          width: 83%;
+        }
+      }
+
+      &--04 { 
+        left: 68.2%;
+        top: 37.2%;
+        width: 16%;
+        min-width: 16*$ratio+px;
+
+        .image {
+          width: 84%;
+        }
+      }
+
+      &--05 {
+        right: 4%;
+        top: 1.8%;
+        width: 17.8%;
+        min-width: 17.8*$ratio+px;
+
+        .image {
+          width: 83%;
+        }
+      }
+
+      &--06 {
+        left: 50.7%;
+        top: 9.4%;
+        width: 18.3%;
+        min-width: 18.3*$ratio+px;
+
+        .image {
+          width: 84%;
+        }
+      }
+    }
+  }
+
+
+  .icons {
+    .red-circle {
+      position: absolute;
+      width: 15%;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+        background-color: #ba3123;
+        border-radius: 100%;
+      }
+
+      &.-line {
+        &:before {
+          background: none;
+          border: #BA3123 1px solid;
+        }
+      }
+
+      &:nth-of-type(1) {
+        top: 10%;
+        left: -3.8%;
+        width: 8.1%;
+      }
+      &:nth-of-type(2) {
+        top: 44%;
+        left: 51.6%;
+        width: 4%;
+      }
+      &:nth-of-type(3) {
+        top: 88%;
+        left: 43%;
+        width: 5.4%;
+      }
+      &:nth-of-type(4) {
+        top: 40.6%;
+        left: 92.8%;
+        width: 5.3%;
+      }
+    }
+  }
+
+  .kv_read {
+    position: absolute;
+    right: 0;
+    bottom: 2%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .kv_logo {
+    display: block;
+    width: 24.2%;
+    margin: 0 4% 4% 0;
+  }
+
+  .kv_text {
+    font-size: clamp(13px, 1.15vw, 16px);
+    white-space: nowrap;
+
+    &_title {
+      font-weight: bold;
+      font-size: clamp(26px, 2.1vw, 32px);
+    }
+    &_sentence {
+      font-weight: 300;
+    }
+  }
+}
+
+@media screen and (min-width:768px) and ( max-width:1020px) {
+  /* PC small window */
+  .section_kv {
+
+   .human-list {
+     .human {
+       &--02 {
+         left: 15%;
+       }
+
+       &--05 {
+         left: 64%;
+       }
+
+       &--06 {
+         left: 38%;
+       }
+     }
+   }
+
+   .kv_read {
+    flex-direction: column;
+   }
+    .kv_logo {
+      min-width: 110px;
+      width: 10%;
+      margin: 0 4% 4% 0;
+    }
+  }
+} /* PC small window */
+
+
+/* kv アニメーション */
+$kv_trs: 0.5s;
+$kv_text_trs: 1.2s;
+
+.section_kv {
+  .human-list {
+    .human {
+      opacity: 0;
+      transform: translate(0px, 20px);
+      transition: opacity $kv_trs 0s, transform $kv_trs 0s;
+
+      .text-image {
+        opacity: 0;
+        transform: rotate(-30deg);
+        transition: opacity $kv_text_trs 0s, transform $kv_text_trs 0s;
+        will-change: transform, opacity;
+      }
+    }
+  }
+
+  .icons {
+    .red-circle {
+      opacity: 0;
+      transition: opacity 0.5s 0s;
+    }
+  }
+
+  $humanDelay:0.1;
+  $textStartDelay:0.4;
+  $textDelay:0.2;
+
+  &.-loaded {
+    .human-list {
+      .human {
+        opacity: 1;
+        transform: translate(0px, 0px);
+
+        .text-image {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+
+        &--01 {
+          transition-delay: 0.0s;
+
+          .text-image {
+            transition-delay: $textStartDelay+s;
+          }
+        }
+        &--02 {
+          transition-delay: $humanDelay * 1+s;
+
+          .text-image {
+            transition-delay: $textStartDelay + $textDelay*1+s;  
+          }
+        }
+        &--03 {
+          transition-delay: $humanDelay * 2+s;
+
+          .text-image {
+            transition-delay: $textStartDelay + $textDelay*2+s;  
+          }
+        }
+        &--04 {
+          transition-delay: $humanDelay * 3+s;
+
+          .text-image {
+            transition-delay: $textStartDelay + $textDelay*3+s;  
+          }
+        }
+        &--05 {
+          transition-delay: $humanDelay * 4+s;
+
+          .text-image {
+            transition-delay: $textStartDelay + $textDelay*4+s;  
+          }
+        }
+        &--06 {
+          transition-delay: $humanDelay * 5+s;
+
+          .text-image {
+            transition-delay: $textStartDelay + $textDelay*5+s;  
+          }
+        }
+      }
+    }
+
+
+  $circleStartDelay:1.8;
+  $circleDelay:0.1;
+
+    .icons {
+      .red-circle {
+        opacity: 1;
+        
+        &:nth-of-type(1) {
+          transition-delay: $circleStartDelay + $circleDelay*1s;
+        }
+        &:nth-of-type(2) {
+          transition-delay: $circleStartDelay + $circleDelay*2s;
+        }
+        &:nth-of-type(3) {
+          transition-delay: $circleStartDelay + $circleDelay*3s;
+        }
+        &:nth-of-type(4) {
+          transition-delay: $circleStartDelay + $circleDelay*4s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fuwafuwa {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.fuwa {
+  animation: 4s fuwafuwa infinite;
+  
+  &:nth-of-type(1) {
+   animation-delay: 0.5s; 
+  }
+  &:nth-of-type(2) {
+   animation-delay: 0.0s; 
+  }
+  &:nth-of-type(3) {
+   animation-delay: 0.2s; 
+  }
+  &:nth-of-type(4) {
+   animation-delay: 0.8s; 
+  }
+}
+
+
+.adasd {
+  background-color: #DDD;
+  height: 1500px;
+}

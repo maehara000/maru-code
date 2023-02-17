@@ -1,0 +1,233 @@
+body * {
+  font-family: "Bebas Neue", cursive !important;
+  font-family: "Zen Maru Gothic", sans-serif !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main-content {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+form {
+  margin: 50px auto 0;
+  width: 800px;
+  max-width: 90%;
+  height: 400px;
+  max-height: 50vh;
+  border: 4px dotted #ddd;
+  text-align: center;
+  position: relative;
+}
+
+.complete {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.78;
+  color: rgb(93, 93, 93);
+}
+
+a {
+  color: rgb(16, 154, 185);
+}
+
+.upload-area {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.upload-area .drag-image {
+  width: 200px;
+  max-width: 50%;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.25;
+}
+.upload-area p {
+  width: 100%;
+  color: #009edc;
+  font-weight: bold;
+}
+
+#inputFiles {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#submitBtn {
+  font-weight: bold;
+  display: block;
+  width: 300px;
+  max-width: 80%;
+  margin: 40px auto 0;
+  font-size: 20px;
+  border-radius: 200px;
+  padding: 20px;
+  background-color: rgb(150, 150, 150);
+  -webkit-box-shadow: 0 3px 0 #797979;
+          box-shadow: 0 3px 0 #797979;
+  opacity: 0.3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  pointer-events: none;
+}
+#submitBtn.fileSelect {
+  background-color: #009edc;
+  -webkit-box-shadow: 0 3px 0 #00445f;
+          box-shadow: 0 3px 0 #00445f;
+  pointer-events: auto;
+  opacity: 1;
+  -webkit-animation: 0.5s ease-in 0s infinite alternate forwards running pushButton;
+          animation: 0.5s ease-in 0s infinite alternate forwards running pushButton;
+}
+#submitBtn:hover {
+  background-color: #0088be;
+}
+#submitBtn:active {
+  position: relative;
+  top: 5px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#fileChangeText {
+  text-align: center;
+  display: none;
+}
+#fileChangeText .title {
+  font-weight: bold;
+  font-size: 1.2em;
+  opacity: 0.8;
+  margin-bottom: 0.2em;
+}
+
+#fileLists {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+#fileLists li {
+  display: inline-block;
+  margin: 0.2em 0;
+}
+#fileLists li:after {
+  content: ",";
+  display: inline-block;
+  margin-right: 0.6em;
+}
+#fileLists li:last-child:after {
+  content: "";
+}
+
+.display {
+  display: block !important;
+}
+
+.num-text {
+  margin: 12px 0 0;
+  font-size: 1.2em;
+}
+
+.gray-block {
+  background-color: rgb(235, 235, 235);
+  padding: 20px;
+  margin: 11px auto 0;
+  width: 800px;
+  max-width: 92%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes pushButton {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes pushButton {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(5, 19, 27, 0.31);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 9999;
+}
+.overlay .complete {
+  background-color: #fff;
+  padding: 20px 20px 60px;
+  margin: auto;
+  z-index: 9999;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+}
+
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  width: 300px;
+  max-width: 80%;
+  margin: 40px auto 0;
+  font-size: 20px;
+  border-radius: 200px;
+  padding: 20px;
+  background-color: rgb(150, 150, 150);
+  -webkit-box-shadow: 0 3px 0 #797979;
+          box-shadow: 0 3px 0 #797979;
+  opacity: 0.3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  pointer-events: none;
+  background-color: #009edc;
+  -webkit-box-shadow: 0 3px 0 #00445f;
+          box-shadow: 0 3px 0 #00445f;
+  pointer-events: auto;
+  opacity: 1;
+  -webkit-animation: 0.5s ease-in 0s infinite alternate forwards running pushButton;
+          animation: 0.5s ease-in 0s infinite alternate forwards running pushButton;
+}

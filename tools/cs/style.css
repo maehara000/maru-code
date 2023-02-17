@@ -1,0 +1,80 @@
+body {
+  background-color: #DDD;
+}
+
+.main {
+  background-color: #FFF;
+  width: 1000px;
+  max-width: calc(100% - 40px);
+  margin: 60px auto 500px;
+  padding: 20px;
+  line-height: 1.7;
+}
+.main img {
+  max-width: 100%;
+}
+.main h1 {
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+.main h2 {
+  font-weight: bold;
+  margin: 2em 0 1em;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.4em;
+}
+.main h3 {
+  font-weight: bold;
+  margin: 2em 0 1em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.4em;
+}
+.main dl {
+  margin: 2em 0;
+}
+.main dl dd {
+  margin-top: 0.5em;
+}
+.main ul {
+  margin: 20px 0;
+  background-color: #f3f3f3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+.main ul li:not(:nth-of-type(1)) {
+  margin-top: 10px;
+}
+.main img {
+  display: block;
+  border: 1px solid #ddd;
+  margin: 20px auto;
+}
+.main figure {
+  margin: 40px 0;
+}
+.main figure img {
+  margin-bottom: 4px;
+}
+.main figcaption {
+  text-align: center;
+  font-size: 0.8em;
+}
+.main .js-toggle {
+  width: 100%;
+  background-color: #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px 0;
+  transition: all 0.3s 0s;
+  opacity: 0;
+  transform: translate(0px, 20px);
+}
+.main .js-toggle.display {
+  opacity: 1;
+  transform: translate(0px, 0);
+}
+.main pre code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+}

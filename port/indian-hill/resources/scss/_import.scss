@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@mixin mincho {
+  font-family: "游明朝", YuMincho, 'Noto Serif JP', "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+@mixin notosan {
+  font-family: 'Noto Sans Japanese', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}

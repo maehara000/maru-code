@@ -1,0 +1,688 @@
+@charset "UTF-8";
+/* A Modern CSS Reset */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+img {
+  image-rendering: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: "Noto Sans JP", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  -ms-overflow-y: hidden;
+  overflow-y: hidden;
+  -ms-overflow-x: scroll;
+  overflow-x: scroll;
+}
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ============
+* common css start
+============ */
+/* ============
+* common parts start
+============ */
+html {
+  font-size: 10px;
+}
+
+@media screen and (min-width: 501px) and (max-width: 1100px) {
+  /* PC small window */
+  html {
+    font-size: 10px;
+  }
+} /* PC small window */
+@media screen and (max-width: 500px) {
+  /* sp only */
+  html {
+    font-size: 1.8vw;
+  }
+} /* sp only */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+  max-width: 500px;
+}
+
+@media screen and (max-width: 500px) {
+  /* sp only */
+  .container {
+    width: 100%;
+  }
+} /* sp only */
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.m0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+img {
+  image-rendering: auto;
+}
+
+.p-r {
+  position: relative;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.m0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.button-wrap {
+  max-width: 600px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+.button-wrap .button_note {
+  font-size: 1.4rem;
+  margin-top: 0.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .basic-button {
+    -webkit-transition: color 0.3s 0s, background-color 0.3s 0s;
+    transition: color 0.3s 0s, background-color 0.3s 0s;
+  }
+  .basic-button:hover {
+    background-color: #fff;
+    color: #ddd;
+  }
+  .basic-button:hover::before {
+    opacity: 0;
+  }
+  .basic-button:hover:after {
+    opacity: 1;
+  }
+} /* pc only */
+@media screen and (max-width: 767px) {
+  /* sp only */
+} /* sp only */
+/* レスポンシブ用表示切り分け */
+@media screen and (min-width: 768px) {
+  /* pc only */
+  .sp { /* SPのみ表示する */
+    display: none !important;
+  }
+} /* pc only */
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .pc { /* PCのみ表示する */
+    display: none !important;
+  }
+} /* sp only */
+@media screen and (max-width: 1000px) {
+  /* pc big-window only */
+  .pc-big { /* PCの、大きいウィンドウのみ表示する */
+    display: none !important;
+  }
+} /* pc big-window only */
+/* ==================
+* アニメーション(.js-dp系)
+* ================== */
+/* アニメーション */
+.fade-dp {
+  opacity: 0;
+  -webkit-transform: translate(0px, 40px);
+          transform: translate(0px, 40px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_fade {
+  opacity: 0;
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_fade.-display {
+  opacity: 1;
+}
+
+.fade-dp_x_l {
+  opacity: 0;
+  -webkit-transform: translate(-40px, 0px);
+          transform: translate(-40px, 0px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_l.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_x_l_up {
+  opacity: 0;
+  -webkit-transform: translate(-40px, 40px);
+          transform: translate(-40px, 40px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_l_up.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_x_r {
+  opacity: 0;
+  -webkit-transform: translate(40px, 0px);
+          transform: translate(40px, 0px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_r.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.fade-dp_x_r_up {
+  opacity: 0;
+  -webkit-transform: translate(40px, 40px);
+          transform: translate(40px, 40px);
+  -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: opacity 1s 0s, -webkit-transform 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s;
+  transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+}
+.fade-dp_x_r_up.-display {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.full-dp {
+  position: relative;
+}
+.full-dp:before, .full-dp:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: width 1.2s 0s cubic-bezier(0.5, 0.57, 0, 0.93);
+  transition: width 1.2s 0s cubic-bezier(0.5, 0.57, 0, 0.93);
+}
+.full-dp:before {
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+}
+.full-dp:after {
+  opacity: 0.7;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: width 1.2s 0.4s cubic-bezier(0.5, 0.57, 0, 0.93);
+  transition: width 1.2s 0.4s cubic-bezier(0.5, 0.57, 0, 0.93);
+}
+.full-dp.-right:before, .full-dp.-right:after {
+  left: 0;
+  right: auto;
+}
+.full-dp.-display:before, .full-dp.-display:after {
+  width: 0;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .sp-fade-dp {
+    opacity: 0;
+    -webkit-transform: translate(0px, 40px);
+            transform: translate(0px, 40px);
+    -webkit-transition: opacity 1s 0s, -webkit-transform 1s 0s;
+    transition: opacity 1s 0s, -webkit-transform 1s 0s;
+    transition: transform 1s 0s, opacity 1s 0s;
+    transition: transform 1s 0s, opacity 1s 0s, -webkit-transform 1s 0s;
+  }
+  .sp-fade-dp.-display {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+} /* sp only */
+/* end アニメーション(.js-dp系) */
+/* common parts end */
+/* -- common css end -- */
+/* ============
+* 以下、各共通ブロック style
+============ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6B6B6B;
+}
+
+.double-column {
+  width: 100%;
+  min-width: 1100px;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: clamp(300px, 50%, 500px) 1fr;
+  grid-template-columns: clamp(300px, 50%, 500px) 1fr;
+  -webkit-transition: grid-template-columns 0.5s 0s;
+  transition: grid-template-columns 0.5s 0s;
+  transition: grid-template-columns 0.5s 0s, -ms-grid-columns 0.5s 0s;
+}
+.double-column.fullWidth {
+  -ms-grid-columns: 0 100%;
+  grid-template-columns: 0 100%;
+  min-width: 0;
+}
+.double-column.fullWidth .one-clumn:first-of-type {
+  opacity: 0;
+}
+.double-column .one-clumn {
+  height: 100vh;
+  overflow: auto;
+}
+.double-column .one-clumn:first-of-type {
+  border-right: 2px solid #000;
+  -webkit-transition: opacity 0.5s 0s;
+  transition: opacity 0.5s 0s;
+}
+.double-column .one-clumn--form {
+  background-color: #F4EEE1;
+  padding: 2rem;
+}
+.double-column .one-clumn--lp {
+  background: url("../images/bg.jpg") rgba(255, 255, 255, 0) no-repeat top 50% left 50%/cover;
+  background-attachment: fixed;
+}
+
+.fixed-button-area {
+  position: fixed;
+  bottom: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  z-index: 99;
+}
+.fixed-button-area .button {
+  font-size: 14px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: rgba(53, 180, 155, 0.5);
+  color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.form-area {
+  padding-bottom: 200px;
+}
+.form-area a {
+  color: #2E9ACD;
+}
+.form-area a:hover {
+  text-decoration: none;
+}
+.form-area h1 {
+  text-align: center;
+}
+.form-area .form-block {
+  margin-top: 3rem;
+}
+.form-area fieldset {
+  margin-top: 3rem;
+  padding: 2rem 2rem 3rem;
+  border-color: rgba(56, 56, 56, 0.46);
+}
+.form-area fieldset legend {
+  background-color: #383838;
+  color: #fff;
+  padding: 0.7rem;
+}
+.form-area .block {
+  margin-top: 3rem;
+}
+.form-area .block .title {
+  margin-bottom: 1rem;
+}
+.form-area .block .sub-title {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+.form-area textarea {
+  width: 100%;
+  height: 150px;
+  resize: vertical;
+}
+.form-area input[type=text] {
+  width: 80%;
+}
+
+.lp-set-button {
+  background-color: #f00;
+  color: #fff;
+  font-weight: bold;
+  font-style: 2rem;
+  text-align: center;
+  width: 90%;
+  padding: 0.4em;
+  margin: 20px auto;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.body-image {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.body-image::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.2;
+}
+.body-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.text {
+  position: absolute;
+  white-space: pre-line;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* LPパターン別スタイリング */
+.lp-contents {
+  background-color: #FFF;
+  margin: auto;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.31);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.31);
+  position: relative;
+}
+.lp-contents .bg-image {
+  display: block;
+  width: 100%;
+}
+.lp-contents .logo {
+  width: 100%;
+  top: 1%;
+  font-size: 2rem;
+  opacity: 0.3;
+}
+.lp-contents .mainCatch {
+  font-family: "Noto Serif JP", serif;
+  width: 100%;
+  font-size: 3.8rem;
+  top: 0.5%;
+}
+.lp-contents .subCatch {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  width: 100%;
+  font-size: 2.6rem;
+  top: 4.5%;
+}
+.lp-contents .pointList {
+  top: 35.8%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4rem;
+}
+.lp-contents .pointList li {
+  font-weight: bold;
+  font-size: 1.7rem;
+  width: 22%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  word-break: break-word;
+}
+.lp-contents .second_titleEn {
+  top: 45.2%;
+  font-size: 2rem;
+}
+.lp-contents .second_titleJa {
+  top: 47%;
+  font-size: 4.6rem;
+  font-family: "Noto Serif JP", serif;
+  color: #af9c6b;
+}
+.lp-contents .setDetail {
+  top: 51.6%;
+  text-align: left;
+  width: 50%;
+  font-weight: 500;
+  left: 50%;
+}
+.lp-contents .normalPrice {
+  top: 62.6%;
+  text-align: left;
+  width: 50%;
+  font-weight: 500;
+  font-family: "Noto Serif JP", serif;
+  left: 30.1%;
+  font-size: 2.3rem;
+  color: #877B3E;
+}
+.lp-contents .offPercent {
+  top: 64.5%;
+  text-align: left;
+  width: auto;
+  font-weight: 500;
+  font-family: "Noto Serif JP", serif;
+  left: 17.2%;
+  font-size: 4.2rem;
+  color: #fff;
+}
+.lp-contents .discountPrice {
+  top: 64%;
+  text-align: left;
+  width: auto;
+  font-weight: 500;
+  font-family: "Noto Serif JP", serif;
+  left: 50.2%;
+  font-size: 5.4rem;
+  color: #af9c6b;
+}
+.lp-contents .cvButton {
+  top: 69.9%;
+  font-weight: 500;
+  font-size: 2.6rem;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+.lp-contents .note_title {
+  top: 80%;
+  top: 76%;
+  font-size: 1.8rem;
+}
+.lp-contents .note_sentence {
+  top: 78%;
+  text-align: left;
+  width: 80%;
+  font-weight: 500;
+  left: 10.2%;
+  font-size: 1.6rem;
+}
+.lp-contents.type-a {
+  color: #887a3d;
+}

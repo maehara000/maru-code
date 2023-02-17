@@ -1,0 +1,503 @@
+@charset "UTF-8";
+/* ========================================================================
+* 各セクションごとのstyle start
+* ======================================================================== */
+/* fv */
+.fv {
+  width: 100%;
+  height: 30rem;
+  position: relative;
+  margin-top: 100vh;
+  position: relative;
+}
+.fv:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+.fv__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  line-height: 1;
+  z-index: 999;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.2rem;
+}
+.fv__main {
+  font-size: 2.4rem;
+}
+.fv__sub {
+  font-size: 1.4rem;
+  display: block;
+  margin-top: 2rem;
+}
+
+.top-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.top-slider .slide-item {
+  width: 100%;
+  height: 100%;
+}
+.top-slider img {
+  width: 100%;
+  display: block;
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* 効果をかけるためのスタイル設定 */
+.slick-main .slick-slide {
+  /* slickによってelement.styleで付けられるopacityを無効化 */
+  opacity: 1 !important;
+}
+
+.slick-main .slideobject {
+  /* フェード要素の初期設定 */
+  opacity: 0;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.slick-main .slick-active .slideobject {
+  opacity: 1;
+  -webkit-transition: ease 5s;
+  transition: ease 5s;
+}
+
+.slick-main .slick-continue .slideobject {
+  opacity: 0;
+  -webkit-transition: ease 5s;
+  transition: ease 5s;
+}
+
+.slick-main figure.image {
+  -webkit-transform: scale(1.4, 1.4);
+          transform: scale(1.4, 1.4);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.slick-main .slick-active figure.image {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  -webkit-transition: ease 10s;
+  transition: ease 10s;
+}
+
+.slick-main .slick-continue figure.image {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-transition: ease 10s;
+  transition: ease 10s;
+}
+
+.slick-main p.text {
+  /* テキスト 初期設定 */
+  opacity: 0;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.slick-main .slick-active p.text {
+  /* テキスト　slick-active(効果開始) この辺は自由にduration */
+  opacity: 1;
+  -webkit-transition: ease 1s;
+  transition: ease 1s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.slick-main .slick-continue p.text {
+  /* テキスト　slick-continue この辺は自由にduration */
+  opacity: 0;
+  -webkit-transition: ease 1s;
+  transition: ease 1s;
+}
+
+/* スライド周りの基本スタイル */
+.slideobject {
+  padding-top: 50%;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.slideobject figure.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.slideobject figure.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slideobject figure.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slideobject p.text {
+  font-size: 20px;
+  line-height: 1.5em;
+  width: 10em;
+  height: 3em;
+  margin: auto;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .fv {
+    height: 40rem;
+  }
+  .fv__main {
+    font-size: 4rem;
+  }
+  .fv__sub {
+    font-size: 1.75rem;
+  }
+
+  .top-slider img {
+    height: 40rem;
+  }
+}
+/* sp only */
+/* end fv */
+/* section_profile */
+.section_profile {
+  margin: 10rem 0 0;
+  background-color: #fff;
+}
+.section_profile__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3rem;
+}
+.section_profile__image {
+  width: 30rem;
+}
+.section_profile__text {
+  width: calc(100% - 33rem);
+  margin-top: -0.5rem;
+}
+.section_profile__title {
+  font-size: 3.8rem;
+}
+.section_profile__position {
+  display: block;
+  font-size: 1.4rem;
+}
+.section_profile__sentence {
+  font-size: 1.4rem;
+  margin-top: 0.6rem;
+  line-height: 2;
+}
+.section_profile__sentence p {
+  margin-bottom: 1rem;
+}
+.section_profile__sns {
+  margin: 1.9rem -0.5rem 0;
+}
+.section_profile__sns-icon {
+  display: inline-block;
+  width: 5rem;
+  -webkit-transition: all 0.3s 0s;
+  transition: all 0.3s 0s;
+  margin: 0.5rem;
+}
+.section_profile__sns-icon:hover {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .section_profile {
+    margin-top: 8rem;
+  }
+  .section_profile__main {
+    display: block;
+    margin: 3rem auto 0;
+  }
+  .section_profile__image {
+    margin: auto;
+  }
+  .section_profile__text {
+    width: 100%;
+    margin: 2rem 0 0;
+  }
+  .section_profile__title {
+    text-align: center;
+    font-size: 3.4rem;
+  }
+  .section_profile__position {
+    font-size: 1.2rem;
+  }
+  .section_profile__sentence {
+    margin-top: 1.5rem;
+  }
+  .section_profile__sns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section_profile__sns-icon {
+    width: 4rem;
+  }
+}
+/* sp only */
+/* end section_profile */
+/* section_history */
+.section_history {
+  margin: 10rem 0 0;
+}
+.section_history__table {
+  font-size: 1.6rem;
+  width: 100%;
+}
+.section_history__table tr {
+  border-bottom: 1px solid #bbbbbb;
+}
+.section_history__table th,
+.section_history__table td {
+  padding: 1rem;
+}
+.section_history__table th {
+  font-weight: 400;
+  width: 10rem;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .section_history {
+    margin-top: 6rem;
+  }
+}
+/* sp only */
+/* end section_history */
+/* bg-logo */
+.bg-logo {
+  font-size: 11rem;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.bg-logo:before, .bg-logo:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background-color: #EFEFEF;
+  left: -10%;
+  -webkit-transform: skew(15deg, 0deg);
+          transform: skew(15deg, 0deg);
+  opacity: 0.8;
+}
+.bg-logo:after {
+  opacity: 0.5;
+  background-color: #fff;
+}
+.bg-logo.-loaded {
+  -webkit-transition: opacity 0.5s 0s;
+  transition: opacity 0.5s 0s;
+}
+.bg-logo.-loaded:before, .bg-logo.-loaded:after {
+  width: 0;
+}
+.bg-logo.-loaded:before {
+  -webkit-transition: width 1.4s 0s;
+  transition: width 1.4s 0s;
+}
+.bg-logo.-loaded:after {
+  width: 0;
+  -webkit-transition: width 1.4s 0.3s;
+  transition: width 1.4s 0.3s;
+}
+.bg-logo.-scroll {
+  opacity: 0;
+}
+.bg-logo.-scroll:before, .bg-logo.-scroll:after {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .bg-logo {
+    font-size: 8rem;
+  }
+}
+/* sp only */
+/* end bg-logo */
+/* scroll */
+.scroll {
+  margin-top: 86vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.scroll .vertical {
+  position: absolute;
+  left: 50%;
+  top: -94px;
+  display: block;
+  width: 1px;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.26);
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  z-index: 1;
+  -webkit-transition: height 0.4s 1.2s linear;
+  transition: height 0.4s 1.2s linear;
+}
+.scroll .vertical:before {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+.scroll.-loaded .vertical {
+  height: 94px;
+}
+.scroll.-loaded .vertical:before {
+  -webkit-animation: 1.5s linear 1.7s infinite forwards line-drop;
+          animation: 1.5s linear 1.7s infinite forwards line-drop;
+}
+.scroll.-scroll {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s 0s;
+  transition: opacity 0.5s 0s;
+}
+
+/* スクロール誘導のアニメーション */
+@-webkit-keyframes line-drop {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  80% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+@keyframes line-drop {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  80% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+@media all and (-ms-high-contrast: none) {
+  /* IEのみ */
+  .vertical {
+    display: none !important;
+  }
+}
+/* end scroll */
+@media screen and (max-width: 767px) {
+  /* sp only */
+  .scroll.-loaded .vertical {
+    height: 10rem;
+    top: -10rem;
+  }
+}
+/* sp only */
+/* ========================================================================
+* 各セクションごとのstyle end
+* ======================================================================== */
